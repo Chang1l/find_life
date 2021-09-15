@@ -65,8 +65,6 @@ function QuizPage({ isShow }) {
   const [linkTo, setLinkTo] = useState("");
   const linkResult = "/result/";
   const [typeOne, setTypeOne] = useState(0);
-  const [typeTwo, setTypeTwo] = useState(0);
-  const [typeThree, setTypeThree] = useState(0);
   const [typeFour, setTypeFour] = useState(0);
   const [finalType, setFinalType] = useState(0);
   const [turn, setTurn] = useState(0);
@@ -82,13 +80,14 @@ function QuizPage({ isShow }) {
       setTimeout(function () {
         setIsLoading(false);
       }, 3000);
-    } else if (questionNum === 0 || questionNum === 1) {
+    } else if (
+      questionNum === 0 ||
+      questionNum === 1 ||
+      questionNum === 2 ||
+      questionNum === 3
+    ) {
       setTypeOne(typeOne + record);
-    } else if (questionNum === 2 || questionNum === 3 || questionNum === 4) {
-      setTypeTwo(typeTwo + record);
-    } else if (questionNum === 5 || questionNum === 6 || questionNum === 7) {
-      setTypeThree(typeThree + record);
-    } else if (questionNum >= 8) {
+    } else if (questionNum >= 3) {
       setTypeFour(typeFour + record);
       if (questionNum === 9) {
         var result = 0;
@@ -96,12 +95,7 @@ function QuizPage({ isShow }) {
         if (typeOne >= 5) {
           result = result + 8;
         }
-        if (typeTwo >= 5) {
-          result = result + 4;
-        }
-        if (typeThree >= 5) {
-          result = result + 2;
-        }
+
         if (typeFour + record >= 5) {
           result = result + 1;
         } else {
@@ -127,7 +121,7 @@ function QuizPage({ isShow }) {
     setQuestionNum(5);
   };
 
-  if (questionNum === 5) {
+  if (questionNum === 3) {
     return (
       <>
         <Wrapper isShow={isLoading}>
@@ -154,11 +148,11 @@ function QuizPage({ isShow }) {
         <Redirect to={linkTo}></Redirect>
       </div>
     );
-  } else if (questionNum < 5 && finalType !== 3) {
+  } else if (questionNum < 3 && finalType !== 3) {
     return (
       <>
         <Wrapper isShow={isShow}>
-          <ProgressBar completed={(questionNum + 1) * 20} rotation={turn} />
+          <ProgressBar completed={(questionNum + 1) * 33.3} rotation={turn} />
 
           <Container>
             <Text>{Parser(contents[questionNum].question)} </Text>

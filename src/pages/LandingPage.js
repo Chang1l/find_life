@@ -3,7 +3,6 @@ import styled from "styled-components";
 import StartButtonComponent from "../components/StartButtonComponent";
 import QuizPage from "./QuizPage";
 import Reaper from "../assets/common/reaper.png";
-import Page from "../assets/common/page3.png";
 
 const Wrapper = styled.div`
   display: ${(props) => (props.isShow === true ? "flex" : "none")};
@@ -16,10 +15,8 @@ const Wrapper = styled.div`
 const Container = styled.div`
   margin-top: 18rem;
   margin-bottom: 3rem;
-  background-image: url(${Page});
-
+  background-color: white;
   background-position: center;
-  resizeMode:"cover"
 
   text-align: center;
 `;

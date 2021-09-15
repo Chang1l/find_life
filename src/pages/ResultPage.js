@@ -209,7 +209,7 @@ function ResultPage({ match }) {
     alert("내 수명 결과가 클립보드에 담겼어요!");
   };
 
-  if (finalType <= 3 && finalType >= 0) {
+  {
     return (
       <Wrapper backgroundColor={results[finalType].color}>
         <Container>
@@ -247,8 +247,6 @@ function ResultPage({ match }) {
         </Container>
       </Wrapper>
     );
-  } else {
-    return <WarningPage />;
   }
 }
 

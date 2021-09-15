@@ -1,14 +1,14 @@
 const questions = [
   {
-    question: "어떻게 살고 싶은가?.",
+    question: "당신의 성별은",
     answers: [
       {
-        text: "짧고 굵게 ‼️",
-        score: 3,
+        text: "남자",
+        score: 1,
       },
       {
-        text: "얇고 길게~",
-        score: 7,
+        text: "여자",
+        score: 2,
       },
     ],
     weight: 0,
@@ -24,14 +24,6 @@ const questions = [
         text: "답2",
         score: 2,
       },
-      {
-        text: "답3",
-        score: 4,
-      },
-      {
-        text: "답4",
-        score: 3,
-      },
     ],
     weight: 0,
   },
@@ -45,39 +37,6 @@ const questions = [
       {
         text: "2",
         score: 4,
-      },
-    ],
-    weight: 0,
-  },
-  {
-    question: "질문4",
-    answers: [
-      {
-        text: "1",
-        score: 8,
-      },
-      {
-        text: "2",
-        score: 2,
-      },
-      {
-        text: "3",
-        score: 0,
-      },
-    ],
-    weight: 0,
-  },
-
-  {
-    question: "질문5",
-    answers: [
-      {
-        text: "1",
-        score: 2,
-      },
-      {
-        text: "2",
-        score: 0,
       },
     ],
     weight: 0,
