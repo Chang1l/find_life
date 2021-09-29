@@ -1,6 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
+
+import DeveloperPage from "./pages/DeveloperPage";
 import ResultPage from "./pages/ResultPage";
 import WarningPage from "./pages/WarningPage";
 
@@ -13,10 +15,15 @@ function App({ props }) {
         render={(props) => <LandingPage props={props} />}
       ></Route>
       <Route
-        path="/result/"
+        path="/result/:finalType"
         render={(props) => <ResultPage props={props} {...props} />}
       ></Route>
 
+      <Route
+        exact
+        path="/makers"
+        render={(props) => <DeveloperPage props={props} />}
+      ></Route>
       <Route path="/*">
         <WarningPage />
       </Route>

@@ -28,7 +28,7 @@ const Button = styled.div`
   font-size: 1.5rem;
   text-align: center;
   border: ${(props) =>
-    props.type === "result" ? "3px solid #000000" : "3px solid lightgray"};
+    props.type === "result" ? "3px  #000000" : "3px solid lightgray"};
 
   /* :hover{
         background-color: ${(props) => "#00462A"};

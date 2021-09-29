@@ -5,6 +5,7 @@ import contents from "./contents/questions";
 import ProgressBar from "../components/ProgressBar";
 import Parser from "html-react-parser";
 import { Link, Redirect } from "react-router-dom";
+import Reaper from "../assets/common/reaper.png";
 
 const Wrapper = styled.div`
   display: ${(props) => (props.isShow === true ? "flex" : "none")};
@@ -24,7 +25,7 @@ const Title = styled.div`
   font-family: "Jalnan";
   font-size: 2.5rem;
   text-align: center;
-  color: #00462a;
+  color: #ff0000;
   margin-top: 1.9rem;
   margin-bottom: 8.4rem;
 `;
@@ -41,7 +42,7 @@ const Msg = styled.div`
   font-size: 1.4rem;
   font-weight: 400;
   text-align: center;
-  color: #ff0000;
+  color: #a7a7a7;
 `;
 const Text = styled.div`
   font-family: "Jalnan";
@@ -65,6 +66,8 @@ function QuizPage({ isShow }) {
   const [linkTo, setLinkTo] = useState("");
   const linkResult = "/result/";
   const [typeOne, setTypeOne] = useState(0);
+  const [typeTwo, setTypeTwo] = useState(0);
+  const [typeThree, setTypeThree] = useState(0);
   const [typeFour, setTypeFour] = useState(0);
   const [finalType, setFinalType] = useState(0);
   const [turn, setTurn] = useState(0);
@@ -74,20 +77,19 @@ function QuizPage({ isShow }) {
       contents[questionNum].weight * contents[questionNum].answers[key].score; //dhld
     if (questionNum === 3 && key === 2) {
       setIsLoading(true);
-      let num = 5;
+      let num = 16;
       setFinalType(num);
       setLinkTo(linkResult + num);
       setTimeout(function () {
         setIsLoading(false);
       }, 3000);
-    } else if (
-      questionNum === 0 ||
-      questionNum === 1 ||
-      questionNum === 2 ||
-      questionNum === 3
-    ) {
+    } else if (questionNum === 0 || questionNum === 1) {
       setTypeOne(typeOne + record);
-    } else if (questionNum >= 3) {
+    } else if (questionNum === 2 || questionNum === 3 || questionNum === 4) {
+      setTypeTwo(typeTwo + record);
+    } else if (questionNum === 5 || questionNum === 6 || questionNum === 7) {
+      setTypeThree(typeThree + record);
+    } else if (questionNum >= 8) {
       setTypeFour(typeFour + record);
       if (questionNum === 9) {
         var result = 0;
@@ -95,7 +97,12 @@ function QuizPage({ isShow }) {
         if (typeOne >= 5) {
           result = result + 8;
         }
-
+        if (typeTwo >= 5) {
+          result = result + 4;
+        }
+        if (typeThree >= 5) {
+          result = result + 2;
+        }
         if (typeFour + record >= 5) {
           result = result + 1;
         } else {
@@ -118,23 +125,27 @@ function QuizPage({ isShow }) {
 
   const onClickResultBtn = () => {
     setIsProcess(false);
-    setQuestionNum(5);
+    setQuestionNum(16);
   };
 
-  if (questionNum === 3) {
+  if (questionNum === 10) {
     return (
       <>
         <Wrapper isShow={isLoading}>
-          <Title>find my life</Title>
-          <Msg>당신의 수명을 찾고 있어요 .. </Msg>
+          <Title>당신의 남은 수명</Title>
+          <Msg>당신의 남은 수명을 찾고 있어요 </Msg>
+          <Footer>
+            made by 염.대.전 &nbsp;
+            <Logo src={Reaper} />
+          </Footer>
         </Wrapper>
         <Wrapper isShow={isProcess}>
           <Container>
-            <Text>당신의 수명은! 바로! </Text>
+            <Text>테스트 완료! </Text>
             <Link to={linkTo} style={{ textDecoration: "none" }}>
               <ButtonComponent
                 type={"result"}
-                text="결과 확인하기"
+                text="나의 수명 확인하기"
                 onclick={onClickResultBtn}
               ></ButtonComponent>
             </Link>
@@ -142,17 +153,17 @@ function QuizPage({ isShow }) {
         </Wrapper>
       </>
     );
-  } else if (finalType === 3) {
+  } else if (finalType === 16) {
     return (
       <div>
         <Redirect to={linkTo}></Redirect>
       </div>
     );
-  } else if (questionNum < 3 && finalType !== 3) {
+  } else if (questionNum < 10 && finalType !== 16) {
     return (
       <>
         <Wrapper isShow={isShow}>
-          <ProgressBar completed={(questionNum + 1) * 33.3} rotation={turn} />
+          <ProgressBar completed={(questionNum + 1) * 10} rotation={turn} />
 
           <Container>
             <Text>{Parser(contents[questionNum].question)} </Text>

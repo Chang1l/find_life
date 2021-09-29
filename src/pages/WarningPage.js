@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import ButtonComponent from "../components/SYBtnComponent";
-import DogImg from "../assets/common/hi.png";
+import ExImg from "../assets/common/hi.png";
 
 const Container = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ const Text = styled.div`
   font-family: "Jalnan";
   font-size: 2rem;
   text-align: center;
-  color: ${(props) => props.theme.primary};
+  color: #ff0000;
   margin-top: 3rem;
   margin-bottom: 5rem;
 `;
@@ -43,9 +43,9 @@ const BtnToPage = styled(NavLink)`
 function WarningPage() {
   return (
     <Container>
-      <Text>앗! 여기는 들어오시면 안됩니다!</Text>
-      <Img src={DogImg}></Img>
-      <SemiText>다시 돌아가주세요.</SemiText>
+      <Text>NOT FOUND ERROR!</Text>
+      <Img src={ExImg}></Img>
+      <SemiText>404 ERROR.</SemiText>
       <BtnToPage exact to="/">
         <ButtonComponent type={"result-activated"} text={"테스트 하러 가기"} />
       </BtnToPage>

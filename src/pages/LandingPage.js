@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import StartButtonComponent from "../components/StartButtonComponent";
 import QuizPage from "./QuizPage";
+
 import Reaper from "../assets/common/reaper.png";
 
 const Wrapper = styled.div`
@@ -75,6 +76,7 @@ function LandingPage() {
             text={"시작하기"}
             onclick={onClickStartBtn}
           />
+
           <Footer>
             염.대.전 &nbsp;
             <Logo src={Reaper} />
