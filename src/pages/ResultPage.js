@@ -59,13 +59,13 @@ const ResultSquare = styled.div`
   margin: 2.2rem;
 
   width: 33.1rem;
-  height: ${(props) => (props.isNormal < 5 ? "50rem" : "22.9rem")};
+  height: ${(props) => (props.isNormal < 16 ? "50rem" : "22.9rem")};
   background-color: white;
   border-radius: 0.5rem;
 
   ${ResultImg} {
     justify-content: center;
-    bottom: ${(props) => (props.isNormal < 5 ? "32rem" : "14rem")};
+    bottom: ${(props) => (props.isNormal < 16 ? "32rem" : "14rem")};
     left: -1.6rem;
   }
 
@@ -75,7 +75,7 @@ const ResultSquare = styled.div`
     word-break: keep-all;
 
     ${(props) =>
-      props.isNormal < 5
+      props.isNormal < 16
         ? `transform: translateX(-50%);
         bottom : 2rem;`
         : `top: 50%;
@@ -84,7 +84,7 @@ const ResultSquare = styled.div`
 `;
 
 const NormalResult = styled.div`
-  display: ${(props) => (props.isNormal < 5 ? "show" : "none")};
+  display: ${(props) => (props.isNormal < 16 ? "show" : "none")};
 `;
 
 const Title = styled.div`
@@ -206,10 +206,10 @@ function ResultPage({ match }) {
   const finalType = match.params.finalType;
 
   const alertMessage = () => {
-    alert("내 수명 결과가 클립보드에 담겼어요!");
+    alert("나의 수명이 담겼어요!");
   };
 
-  {
+  if (finalType <= 16 && finalType >= 0) {
     return (
       <Wrapper backgroundColor={results[finalType].color}>
         <Container>
@@ -220,7 +220,7 @@ function ResultPage({ match }) {
             <Content>{Parser(results[finalType].description)}</Content>
           </ResultSquare>
 
-          <Title>친구에게 결과 공유하기</Title>
+          <Title>👍 친구에게 결과 공유하기</Title>
           <FlexLayout>
             <ShareSquare>
               <FlexLayout>
@@ -244,9 +244,17 @@ function ResultPage({ match }) {
               </BtnToPage>
             </ShareSquare>
           </FlexLayout>
+
+          <BtnToPage exact to="/makers">
+            <DeveloperPageLink>
+              제작자들은 어떤 사람인지 궁금하다면? 클릭!
+            </DeveloperPageLink>
+          </BtnToPage>
         </Container>
       </Wrapper>
     );
+  } else {
+    return <WarningPage />;
   }
 }
 
