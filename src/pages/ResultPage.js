@@ -49,7 +49,8 @@ const ResultImg = styled.img`
 const Content = styled.div`
   position: absolute;
   font-family: "Spoqa-Han-Sans";
-  font-size: 1.2rem;
+  font-size: 2.5rem;
+  text-align: center;
   color: black;
 `;
 
@@ -65,7 +66,7 @@ const ResultSquare = styled.div`
 
   ${ResultImg} {
     justify-content: center;
-    bottom: ${(props) => (props.isNormal < 16 ? "32rem" : "14rem")};
+    bottom: ${(props) => (props.isNormal < 16 ? "15rem" : "10rem")};
     left: -1.6rem;
   }
 

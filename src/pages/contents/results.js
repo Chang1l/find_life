@@ -2,7 +2,7 @@ const results = [
   {
     //0
     type: "HIDC",
-    color: "#95D4E2",
+    color: "#8c82ba",
     title: "당신은1년뒤 사망",
     name: "당신은 1년뒤사망",
     img: "../result-image/reaper.png",
@@ -13,7 +13,7 @@ const results = [
   {
     //1
     type: "HIDO",
-    color: "#6C854B",
+    color: "#8c82ba",
     title: "당신은2년뒤 사망",
     name: "당신은 2년뒤사망",
     img: "../result-image/reaper.png",
@@ -24,9 +24,9 @@ const results = [
   {
     //2
     type: "HISC",
-    color: "#55356F",
+    color: "#8c82ba",
     title: "당신은4년뒤 사망",
-    name: "커피머신",
+    name: "당신은4년뒤 사망",
     img: "../result-image/reaper.png",
     description: "당신은31년뒤 사망",
     subdesc: "",
@@ -35,7 +35,7 @@ const results = [
   {
     //3
     type: "HISO",
-    color: "#425994",
+    color: "#8c82ba",
     title: "당신은3년뒤 사망",
     name: "당신은 3년뒤사망",
     img: "../result-image/reaper.png",
@@ -46,7 +46,7 @@ const results = [
   {
     //4
     type: "HEDC",
-    color: "#B567B2",
+    color: "#8c82ba",
     title: "당신은 4년뒤 사망",
     name: "4년뒤 사망",
     img: "../result-image/reaper.png",
@@ -57,7 +57,7 @@ const results = [
   {
     //5
     type: "HEDO",
-    color: "#6DAAE2",
+    color: "#8c82ba",
     title: "당신은5년뒤 사망",
     name: "5년뒤 사망",
     img: "../result-image/reaper.png",
@@ -68,7 +68,7 @@ const results = [
   {
     //6
     type: "HESC",
-    color: "#AFCA84",
+    color: "#8c82ba",
     title: "당신은6년뒤 사망",
     name: "6년뒤 사망",
     img: "../result-image/reaper.png",
@@ -79,7 +79,7 @@ const results = [
   {
     //7
     type: "HESO",
-    color: "#786CBE",
+    color: "#8c82ba",
     title: "당신은4년뒤 사망",
     name: "당신은7년뒤 사망",
     img: "../result-image/reaper.png",
@@ -90,7 +90,7 @@ const results = [
   {
     //8
     type: "WIDC",
-    color: "#FFD465",
+    color: "#8c82ba",
     title: "당신은7년뒤 사망",
     name: "당신은7년뒤 사망",
     img: "../result-image/reaper.png",
@@ -101,7 +101,7 @@ const results = [
   {
     //9
     type: "WIDO",
-    color: "#F08383",
+    color: "#8c82ba",
     title: "당신은8년뒤 사망",
     name: "당신은8년뒤 사망",
     img: "../result-image/reaper.png",
@@ -112,7 +112,7 @@ const results = [
   {
     //10
     type: "WISC",
-    color: "#424E8E",
+    color: "#8c82ba",
     title: "당신은9년뒤 사망",
     name: "당신은9년뒤 사망",
     img: "../result-image/reaper.png",
@@ -123,7 +123,7 @@ const results = [
   {
     //11
     type: "WISO",
-    color: "#9FB2E3",
+    color: "#8c82ba",
     title: "당신은10년뒤 사망",
     name: "당신은19년뒤 사망",
     img: "../result-image/reaper.png",
@@ -134,7 +134,7 @@ const results = [
   {
     //12
     type: "WEDC",
-    color: "#497945",
+    color: "#8c82ba",
     title: "당신은11년뒤 사망",
     name: "당신은11년뒤 사망",
     img: "../result-image/reaper.png",
@@ -145,7 +145,7 @@ const results = [
   {
     //13
     type: "WEDO",
-    color: "#B13B3B",
+    color: "#8c82ba",
     title: "당신은12년뒤 사망",
     name: "당신은12년뒤 사망",
     img: "../result-image/reaper.png",
@@ -156,7 +156,7 @@ const results = [
   {
     //14
     type: "WESC",
-    color: "#99D6D6",
+    color: "#8c82ba",
     title: "당신은13년뒤 사망",
     name: "당신은13년뒤 사망",
     img: "../result-image/reaper.png",
@@ -167,7 +167,7 @@ const results = [
   {
     //15
     type: "WESO",
-    color: "#FEC0C0",
+    color: "#8c82ba",
     title: "당신은14년뒤 사망",
     name: "당신은14년뒤 사망",
     img: "../result-image/reaper.png",
@@ -178,7 +178,7 @@ const results = [
   {
     //16
     type: "OUT",
-    color: "#1F1F1F",
+    color: "#8c82ba",
     title: "당신은14년뒤 사망",
     name: "당신은14년뒤 사망",
     img: "../result-image/reaper.png",
