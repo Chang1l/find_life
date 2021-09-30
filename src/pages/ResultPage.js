@@ -60,13 +60,13 @@ const ResultSquare = styled.div`
   margin: 2.2rem;
 
   width: 33.1rem;
-  height: ${(props) => (props.isNormal < 16 ? "50rem" : "22.9rem")};
+  height: ${(props) => (props.isNormal < 150 ? "50rem" : "22.9rem")};
   background-color: white;
   border-radius: 0.5rem;
 
   ${ResultImg} {
     justify-content: center;
-    bottom: ${(props) => (props.isNormal < 16 ? "15rem" : "10rem")};
+    bottom: ${(props) => (props.isNormal < 150 ? "15rem" : "10rem")};
     left: -1.6rem;
   }
 
@@ -76,7 +76,7 @@ const ResultSquare = styled.div`
     word-break: keep-all;
 
     ${(props) =>
-      props.isNormal < 16
+      props.isNormal < 150
         ? `transform: translateX(-50%);
         bottom : 2rem;`
         : `top: 50%;
@@ -85,14 +85,14 @@ const ResultSquare = styled.div`
 `;
 
 const NormalResult = styled.div`
-  display: ${(props) => (props.isNormal < 16 ? "show" : "none")};
+  display: ${(props) => (props.isNormal < 150 ? "show" : "none")};
 `;
 
 const Title = styled.div`
   font-family: "Jalnan";
   font-size: 1.6rem;
   text-align: center;
-  color: white;
+  color: black;
   margin-top: 4.1rem;
 `;
 
@@ -210,7 +210,7 @@ function ResultPage({ match }) {
     alert("나의 수명이 담겼어요!");
   };
 
-  if (finalType <= 16 && finalType >= 0) {
+  if (finalType <= 150 && finalType >= 0) {
     return (
       <Wrapper backgroundColor={results[finalType].color}>
         <Container>

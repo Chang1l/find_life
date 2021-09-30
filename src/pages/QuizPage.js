@@ -77,7 +77,7 @@ function QuizPage({ isShow }) {
       contents[questionNum].weight * contents[questionNum].answers[key].score; //dhld
     if (questionNum === 3 && key === 2) {
       setIsLoading(true);
-      let num = 16;
+      let num = 500;
       setFinalType(num);
       setLinkTo(linkResult + num);
       setTimeout(function () {
@@ -92,22 +92,25 @@ function QuizPage({ isShow }) {
     } else if (questionNum >= 8) {
       setTypeFour(typeFour + record);
       if (questionNum === 9) {
-        var result = 0;
-
+        var result = typeOne + typeTwo + typeThree + typeFour
+                
+        /*
         if (typeOne >= 5) {
-          result = result + 8;
+            result = result + 8;
         }
         if (typeTwo >= 5) {
-          result = result + 4;
+            result = result + 4;
         }
         if (typeThree >= 5) {
-          result = result + 2;
+            result = result + 2;
         }
         if (typeFour + record >= 5) {
-          result = result + 1;
-        } else {
-          result = result + 0;
+            result = result + 1;
         }
+        else {
+            result = result + 0;
+        }
+        */
         let num = result;
         setFinalType(num);
         setLinkTo(linkResult + num);
@@ -153,13 +156,13 @@ function QuizPage({ isShow }) {
         </Wrapper>
       </>
     );
-  } else if (finalType === 16) {
+  } else if (finalType === 150) {
     return (
       <div>
         <Redirect to={linkTo}></Redirect>
       </div>
     );
-  } else if (questionNum < 10 && finalType !== 16) {
+  } else if (questionNum < 10 && finalType !== 150) {
     return (
       <>
         <Wrapper isShow={isShow}>
