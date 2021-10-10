@@ -32,6 +32,7 @@ const Intro = styled.div`
   color: #ff0000;
   margin-bottom: 4rem;
 `;
+
 const Title = styled.div`
   font-family: "Jalnan";
   font-size: 2.5rem;
